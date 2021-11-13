@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { startLoadPhotos } from '../actions/photos';
 import Photo from './Photo';
 
-const Gallery = ({ errors, photos, dispatch }) => {
+const GalleryComp = ({ errors, photos, dispatch }) => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
@@ -37,4 +37,4 @@ const mapStateToProps = (state) => ({
     errors: state.errors || {}
 });
 
-export default connect(mapStateToProps)(Gallery);
+export default connect(mapStateToProps)(GalleryComp);
