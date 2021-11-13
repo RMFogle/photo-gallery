@@ -17,9 +17,9 @@ const upload = multer({
     }
     });
 
-router.get('/', getPhotos);
-router.post('/', upload.single('photo'), createPhoto); 
-router.get('/:id', getPhoto); 
-router.delete('/:id', deletePhoto); 
+router.get('/photos', getPhotos);
+router.post('/photos', upload.single('photo'), createPhoto); 
+router.get('/photos/:id', getPhoto); 
+router.delete('/photos/:id', deletePhoto); 
 
 export default router;

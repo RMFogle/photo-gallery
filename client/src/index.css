@@ -1,6 +1,6 @@
 /* app css below */
 
-    html {
+    /* html {
     font-size: 62.5%;
     }
     
@@ -11,9 +11,9 @@
         letter-spacing: 1px;
         min-height: 100vh;
         font-size: 1.6rem;
-    }
+    } */
     /* ----- header css starts here ----- */
-    header {
+    /* header {
         text-align: center;
         margin: 2rem 0 1rem 0;
 
@@ -55,7 +55,7 @@
     }
     /* ----- header css ends here ----- */
     /* ----- main content css starts here ----- */
-    .upload-page {
+    /* .upload-page {
         margin-top: 2rem;
     }
     
@@ -85,10 +85,10 @@
         overflow: hidden;
         margin: 0.5rem;
     
-        }
+        } */ */
     /* ----- main content css ends here----- */
     /* ----- buttons css starts here----- */
-    button {
+    /* button {
         margin-right: 0.5rem;
     }
     
@@ -99,10 +99,10 @@
     
     .disabled {
         pointer-events: none;
-    }
+    } */
     /* ----- buttons css ends here ----- */
     /* ----- messages css starts here ----- */
-    .errorMsg {
+    /* .errorMsg {
         color: #f21e08;
         background: #fff0f0;
         padding: 1rem;
@@ -130,9 +130,9 @@
         font-size: 200%;
         height: 20rem;
         line-height: 20rem;
-    }
+    } */
     /* ----- messages css ends here ----- */
-    @media only screen and (max-width: 1200px) {
+    /* @media only screen and (max-width: 1200px) {
         .main-content {
         width: 100%;
         }
@@ -150,4 +150,4 @@
         .photos-list {
             width: 80%;
         }
-    }
+    } */
