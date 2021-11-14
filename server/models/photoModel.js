@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const PhotoSchema = mongoose.Schema({
+const PhotoSchema = new mongoose.Schema({
     photo: {
         type: Buffer,
     }, 
