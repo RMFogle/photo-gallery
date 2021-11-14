@@ -21,6 +21,10 @@ app.use(cookieParser())
 app.use('/api', routes.authRouter)
 app.use('/api', routes.photosRouter)
 
+app.get('/', (req, res) => {
+    res.send('Hello to photo gallery API')
+})
+
 //Connect to mongodb cloud atlas 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }

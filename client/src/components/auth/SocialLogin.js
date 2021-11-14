@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { GoogleLogin, GoogleLoginResponse } from 'react-google-login-lite';
+import { GoogleLogin } from 'react-google-login-lite';
 
 import { googleLogin } from '../../actions/auth'
 
