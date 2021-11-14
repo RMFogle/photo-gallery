@@ -1,5 +1,7 @@
 body {
+    background: linear-gradient(141deg, #b9b9b9 0%, #d9d9da 51%, #505050 75%);
     padding: 0;
+    padding-bottom: 60px;
     box-sizing: border-box;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,6 +9,8 @@ body {
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+    color: #666;
+    min-height: 100vh;
     }
     
     code {
@@ -21,6 +25,21 @@ body {
     transform: translate(-3px);
     border-radius: 50%;
 }
+
+.container {
+    min-height: 100%;
+    position: relative;
+}
+
+.img {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    box-shadow: 10px 10px #25252528;
+}
+
 
 @import url('./auth.css');
 
