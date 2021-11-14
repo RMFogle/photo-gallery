@@ -1,8 +1,10 @@
+import homeImage from '../assets/homeImage.png'
+import Image from 'react-bootstrap/Image'
 
 const Home = () => {
     return (
         <div>
-            <h2>Home Page</h2>
+            <Image src={homeImage} className="img" roundedCircle />
         </div>
     )
 }
