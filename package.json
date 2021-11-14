@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "personal photo gallery",
   "main": "index.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x"
+  },
   "type":"module",
   "scripts": {
     "start": "nodemon index.js"
