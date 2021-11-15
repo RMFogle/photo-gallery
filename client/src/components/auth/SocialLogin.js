@@ -14,7 +14,7 @@ const SocialLogin = () => {
     return (
         <div className="my-2">
             <GoogleLogin 
-            client_id='244836444188-fnf2rsmeikroefsuah6o8b1uovjsve4j.apps.googleusercontent.com'
+            client_id='244836444188-2dsfqcomhankmnm64590tg3vc4ra52bj.apps.googleusercontent.com'
             cookiepolicy='single_host_origin'
             onSuccess={onSuccess}
             />
