@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const BASE_API_URL = 'http://localhost:5000/api/photos';
+export const BASE_API_URL = 'https://photo-gal-app.herokuapp.com/api/photos';
 
 export const postAPI = async (url, post, token) => {
     const res = await axios.post(`/api/${url}`, post, {
