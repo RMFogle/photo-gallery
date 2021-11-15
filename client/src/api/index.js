@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-export const BASE_API_URL = 'https://photo-gal-app.herokuapp.com/api/photos';
+export const BASE_API_URL = 'https://photo-gal-app.herokuapp.com';
 
 export const postAPI = async (url, post, token) => {
-    const res = await axios.post(`/api/${url}`, post, {
+    const res = await axios.post(`${BASE_API_URL}/api/${url}`, post, {
         headers: { Authorization: token }
     })
 
@@ -11,7 +11,7 @@ export const postAPI = async (url, post, token) => {
 }
 
 export const getAPI = async (url, token) => {
-    const res = await axios.get(`/api/${url}`, {
+    const res = await axios.get(`${BASE_API_URL}/api/${url}`, {
         headers: { Authorization: token }
     })
 
@@ -19,7 +19,7 @@ export const getAPI = async (url, token) => {
 }
 
 export const deleteAPI = async (url, token) => {
-    const res = await axios.delete(`/api/${url}`, {
+    const res = await axios.delete(`${BASE_API_URL}/api/${url}`, {
         headers: { Authorization: token }
     })
 
