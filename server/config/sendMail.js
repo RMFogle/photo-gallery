@@ -35,11 +35,11 @@ const sendEmail = async (to, url, txt) => {
         const mailOptions = {
             from: SENDER_MAIL,
             to: to,
-            subject: "Image Gallery",
+            subject: "Photo Gallery",
             html: `
                     <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
                     <h2 style="text-align: center; text-transform: uppercase;color: blue;">Welcome to the React Image Gallery.</h2>
-                    <p>Congratulations! You're almost set to start using React Image Gallery. 
+                    <p>Congratulations! You're almost set to start using React Photo Gallery. 
                         Just click the button below to validate your email address.
                     </p>
 

@@ -11,7 +11,7 @@ export const postAPI = async (url, post, token) => {
 }
 
 export const getAPI = async (url, token) => {
-    const res = await axios.get(`/api/${url}`, {
+    const res = await axios.get(`${API_URL}/api/${url}`, {
         headers: { Authorization: token }
     })
 
@@ -19,7 +19,7 @@ export const getAPI = async (url, token) => {
 }
 
 export const deleteAPI = async (url, token) => {
-    const res = await axios.delete(`/api/${url}`, {
+    const res = await axios.delete(`${API_URL}/api/${url}`, {
         headers: { Authorization: token }
     })
 
