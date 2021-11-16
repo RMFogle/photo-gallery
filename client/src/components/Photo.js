@@ -1,5 +1,5 @@
 import React from 'react';
-import { BASE_API_URL } from '../api/';
+import { PHOTO_API_URL } from '../api/config';
 import { connect } from 'react-redux';
 import { deletePhoto } from '../actions/photos';
 import { useDispatch } from 'react-redux';
@@ -8,7 +8,7 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 
 const Photo = ({ id }) => {
-const url = `${BASE_API_URL}/${id}`;
+const url = `${PHOTO_API_URL}/${id}`;
 const dispatch = useDispatch();
 
 

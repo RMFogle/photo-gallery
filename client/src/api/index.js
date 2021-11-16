@@ -1,9 +1,9 @@
 import axios from 'axios'
-
-export const BASE_API_URL = 'https://photo-gal-app.herokuapp.com/api/photos';
+import { API_URL } from './config';
+axios.defaults.withCredentials = true
 
 export const postAPI = async (url, post, token) => {
-    const res = await axios.post(`/api/${url}`, post, {
+    const res = await axios.post(`${API_URL}/api/${url}`, post, {
         headers: { Authorization: token }
     })
 
