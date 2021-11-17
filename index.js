@@ -13,13 +13,13 @@ const app = express();
 app.use(express.json({ limit: "30mb", extended: true })); 
 app.use(express.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors({
-    origin: 'https://sad-mestorf-f1ac6b.netlify.app/login',
+    origin: 'https://sad-mestorf-f1ac6b.netlify.app',
 })); 
 app.use(morgan('dev'))
 app.use(cookieParser())
 
 app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://sad-mestorf-f1ac6b.netlify.app/login');
+    res.setHeader('Access-Control-Allow-Origin', 'https://sad-mestorf-f1ac6b.netlify.app');
 
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
