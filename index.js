@@ -12,13 +12,7 @@ import routes from "./server/routes/index.js"
 const app = express();
 app.use(express.json({ limit: "30mb", extended: true })); 
 app.use(express.urlencoded({ limit: "30mb", extended: true }))
-
-const corsOptions = {
-    origin: 'https://sad-mestorf-f1ac6b.netlify.app',
-    optionSuccessStatus: 200,
-    methods: "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-}
-app.use(cors(corsOptions)); 
+app.use(cors())
 app.use(morgan('dev'))
 app.use(cookieParser())
 
