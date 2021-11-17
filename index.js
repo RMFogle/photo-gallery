@@ -12,23 +12,15 @@ import routes from "./server/routes/index.js"
 const app = express();
 app.use(express.json({ limit: "30mb", extended: true })); 
 app.use(express.urlencoded({ limit: "30mb", extended: true }))
-app.use(cors({
+
+const corsOptions = {
     origin: 'https://sad-mestorf-f1ac6b.netlify.app',
-})); 
+    optionSuccessStatus: 200,
+    methods: "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+}
+app.use(cors(corsOptions)); 
 app.use(morgan('dev'))
 app.use(cookieParser())
-
-app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://sad-mestorf-f1ac6b.netlify.app');
-
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    next();
-})
 
 app.use('/api', routes.authRouter)
 app.use('/api', routes.photosRouter)
