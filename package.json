@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/RMFogle/photo-gallery/issues"
   },
-  "homepage": "https://github.com/RMFogle/photo-gallery#readme",
   "dependencies": {
     "async": "^3.2.2",
     "bcrypt": "^5.0.1",
