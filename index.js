@@ -19,7 +19,7 @@ app.use(morgan('dev'))
 app.use(cookieParser())
 
 app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'https://sad-mestorf-f1ac6b.netlify.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://sad-mestorf-f1ac6b.netlify.app/login');
 
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
