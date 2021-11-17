@@ -10,20 +10,6 @@ import { refreshToken } from './actions/auth'
 
 const App = () => {
     const dispatch = useDispatch()
-    const makeAPICall = async () => {
-        try {
-            const response = await fetch('https://photo-gal-app.herokuapp.com', {mode:'cors'});
-            const data = await response.json();
-            console.log({ data })
-        }
-        catch (e) {
-            console.log(e)
-        }
-    }
-
-    useEffect(() => {
-        makeAPICall();
-    }, [])
 
     useEffect(() => {
         dispatch(refreshToken())
