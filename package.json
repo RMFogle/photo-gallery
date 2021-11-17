@@ -7,7 +7,7 @@
     "node": "16.x",
     "npm": "7.x"
   },
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
