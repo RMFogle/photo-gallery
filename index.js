@@ -24,6 +24,7 @@ app.use('/api', routes.authRouter)
 app.use('/api', routes.photosRouter)
 
 app.get('/', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'https://sad-mestorf-f1ac6b.netlify.app')
     res.send('Hello to photo gallery API')
 })
 
