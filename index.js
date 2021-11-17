@@ -22,15 +22,16 @@ app.use(cors())
 app.use(morgan('dev'))
 app.use(cookieParser())
 
-app.use('/api', routes.authRouter)
-app.use('/api', routes.photosRouter)
-
+app.options('*', cors())
 app.get('/', cors(corsOptions), (req, res, next) => {
     res.json({
         msg: 'Welcome',
         'photo-gallery-api': 'https://sad-mestorf-f1ac6b.netlify.app'
     })
 })
+
+app.use('/api', routes.authRouter)
+app.use('/api', routes.photosRouter)
 
 const port = process.env.PORT || 5000; 
 
