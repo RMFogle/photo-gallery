@@ -10,18 +10,16 @@ import routes from "./server/routes/index.js"
 
 
 const app = express();
-const corsOptions = {
-    origin: 'https://sad-mestorf-f1ac6b.netlify.app',
-    optionsSuccessStatus: 200
-}
-app.use(cors());
+app.use(cors({
+    origin: `${process.env.BASE_URL}`,
+    credentials: true,
+}));
 app.use(express.json({ limit: "30mb", extended: true })); 
 app.use(express.urlencoded({ limit: "30mb", extended: true }))
 app.use(morgan('dev'))
 app.use(cookieParser())
 
-app.options('*', cors())
-app.get('/', cors(corsOptions), (req, res, next) => {
+app.get('/', (req, res) => {
     res.json({
         msg: 'Welcome',
         'photo-gallery-api': 'https://sad-mestorf-f1ac6b.netlify.app'
