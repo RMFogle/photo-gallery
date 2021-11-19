@@ -27,17 +27,7 @@ const loginOptions = {
 }
 app.options('/api/google_login', cors(loginOptions))
 app.post('/api/google_login', cors(loginOptions), function (req, res, next) {
-    res.json({msg: 'This is CORS-enables for all origins'})
-})
-
-const refreshToken = {
-    origin: true, 
-    methods: ["GET"],
-    credentials: true,
-}
-app.options('/api/refresh_token', cors(refreshToken))
-app.post('/api/refresh_token', cors(refreshToken), function (req, res, next) {
-    res.json({msg: 'Refresh Token Accepted'})
+    res.json({msg: 'This is CORS-enables for google login'})
 })
 
 app.get('/', (req, res) => {
