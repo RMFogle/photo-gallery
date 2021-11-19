@@ -26,7 +26,7 @@ const loginOptions = {
     maxAge: 3600
 }
 app.options('/api/google_login', cors(loginOptions))
-app.post('/api/google_login', cors(), function (req, res, next) {
+app.post('/api/google_login', cors(loginOptions), function (req, res, next) {
     res.json({msg: 'This is CORS-enables for all origins'})
 })
 
