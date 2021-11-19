@@ -14,7 +14,7 @@ const Menu = () => {
     ]
 
     const afLoginLinks = [
-        { label: 'Home', path: '/' },
+        { label: 'Home', path: '/upload' },
         { label: 'Upload', path: '/upload' },
         { label: 'Gallery', path: '/gallery'}
     ]
