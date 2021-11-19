@@ -19,7 +19,13 @@ app.use(cors({
 app.use(morgan('dev'))
 app.use(cookieParser())
 
-app.options('/api/google_login', cors())
+const loginOptions = {
+    origin: true,
+    methods: ["POST"],
+    credentials: true,
+    maxAge: 3600
+}
+app.options('/api/google_login', cors(loginOptions))
 app.post('/api/google_login', cors(), function (req, res, next) {
     res.json({msg: 'This is CORS-enables for all origins'})
 })
