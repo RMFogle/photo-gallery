@@ -30,15 +30,14 @@ app.post('/api/google_login', cors(loginOptions), function (req, res, next) {
     res.json({msg: 'This is CORS-enables for google login'})
 })
 
+app.use('/api', routes.authRouter)
+app.use('/api', routes.photosRouter)
 app.get('/', (req, res) => {
     res.json({
         msg: 'Welcome',
         'photo-gallery-api': 'https://sad-mestorf-f1ac6b.netlify.app'
     })
 })
-
-app.use('/api', routes.authRouter)
-app.use('/api', routes.photosRouter)
 
 const port = process.env.PORT || 5000; 
 

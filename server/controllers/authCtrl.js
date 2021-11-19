@@ -98,9 +98,9 @@ const authCtrl = {
             if(!rf_token) return res.status(400).json({msg: "Please login now"})
 
             const decoded = jwt.verify(rf_token, `${process.env.REFRESH_TOKEN_SECRET}`)
-            if(!decoded.id) return res.status(400).json({msg: "Please login now"})
+            if(!decoded) return res.status(400).json({msg: "Please login now"})
 
-            const user = await Users.findById(decoded.id).select("-password +rf_token")
+            const user = await Users.findById(decoded).select("-password +rf_token")
             if(!user) return res.status(400).json({msg: "This account does not exist"})
 
             if(rf_token !==user.rf_token)
