@@ -19,7 +19,6 @@ app.use(cors({
 app.use(morgan('dev'))
 app.use(cookieParser())
 
-app.options('*', cors())
 app.get('/', (req, res) => {
     res.json({
         msg: 'Welcome',
