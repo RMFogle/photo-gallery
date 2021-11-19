@@ -19,6 +19,11 @@ app.use(cors({
 app.use(morgan('dev'))
 app.use(cookieParser())
 
+app.options('/api/google_login', cors())
+app.post('/api/google_login', cors(), function (req, res, next) {
+    res.json({msg: 'This is CORS-enables for all origins'})
+})
+
 app.get('/', (req, res) => {
     res.json({
         msg: 'Welcome',
