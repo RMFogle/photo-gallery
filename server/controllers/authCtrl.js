@@ -75,9 +75,18 @@ const authCtrl = {
     },
 
     logout: async(req, res) => {
+        if(!req.user)
+        return res.status(400).json({msg: 'Invalid Authentication.'})
+
         try {
             res.clearCookie('refreshtoken', { path: `/api/refresh_token` })
+
+            await Users.findOneAndUpdate({_id: req.user._id}, {
+                rf_token: ''
+            })
+
             return res.json({msg: "Logged out!"})
+
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
@@ -88,13 +97,21 @@ const authCtrl = {
             const rf_token = req.cookies.refreshtoken
             if(!rf_token) return res.status(400).json({msg: "Please login now"})
 
-            const decoded = jwt.verify(rf_token, `${process.env.REFRESH_TOKEN_SECRET}`)
+            const decoded = jwt.verify(rf_token, id, `${process.env.REFRESH_TOKEN_SECRET}`)
             if(!decoded.id) return res.status(400).json({msg: "Please login now"})
 
-            const user = await Users.findById(decoded.id).select("-password")
+            const user = await Users.findById(decoded.id).select("-password +rf_token")
             if(!user) return res.status(400).json({msg: "This account does not exist"})
 
+            if(rf_token !==user.rf_token)
+                return res.status(400).json({msg: "Please login now!"})
+
             const access_token = generateAccessToken({id: user._id})
+            const refresh_token = generateRefreshToken({id: user._id}, res)
+
+            await Users.findOneAndUpdate({_id: user._id}, {
+                rf_token: refresh_token
+            })
 
             res.json({ access_token, user })
         } catch (err) {
@@ -128,7 +145,7 @@ const authCtrl = {
                     account: email, 
                     password: passwordHash, 
                     avatar: picture,
-                    type: 'login'
+                    type: 'google'
                 }
                 registerUser(user, res)
             }
@@ -144,6 +161,10 @@ const loginUser = async (user, password, res) => {
 
     const access_token = generateAccessToken({id: user._id})
     const refresh_token = generateRefreshToken({id: user._id})
+
+    await Users.findOneAndUpdate({_id: user._id}, {
+        rf_token:refresh_token
+    })
 
     res.cookie('refreshtoken', refresh_token, {
         httpOnly: true,
@@ -161,10 +182,12 @@ const loginUser = async (user, password, res) => {
 
 const registerUser = async (user, res) => {
     const newUser = new Users(user)
-    await newUser.save()
 
     const access_token = generateAccessToken({id: newUser._id})
     const refresh_token = generateRefreshToken({id: newUser._id})
+
+    newUser.rf_token = refresh_token
+    await newUser.save()
 
     res.cookie('refreshtoken', refresh_token, {
         httpOnly: true,
