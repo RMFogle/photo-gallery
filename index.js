@@ -19,15 +19,15 @@ app.use(cors({
 app.use(morgan('dev'))
 app.use(cookieParser())
 
-const loginOptions = {
+const googleLoginCors = {
     origin: true,
     methods: ["POST"],
     credentials: true,
     maxAge: 3600,
     preflightContinue: true,
 }
-app.options('/api/google_login', cors(loginOptions))
-app.post('/api/google_login', cors(loginOptions), function (req, res, next) {
+app.options('/api/google_login', cors(googleLoginCors))
+app.post('/api/google_login', cors(googleLoginCors), function (req, res, next) {
     res.json({msg: 'This is CORS-enables for google login'})
 })
 
@@ -43,18 +43,53 @@ app.get('/api/refresh_token', cors(refreshTokenCors), function (req, res, next) 
     res.json({msg: 'This is CORS-enables for refresh token'})
 })
 
-const loginUser = {
+const loginUserCors = {
     origin: true,
     methods: ["POST"],
     credentials: true,
     maxAge: 3600,
     preflightContinue: true,
 }
-app.options('/api/login', cors(loginUser))
-app.post('/api/login', cors(loginUser), function (req, res, next) {
+app.options('/api/login', cors(loginUserCors))
+app.post('/api/login', cors(loginUserCors), function (req, res, next) {
     res.json({msg: 'This is CORS-enables for login'})
 })
 
+const logoutUserCors = {
+    origin: true,
+    methods: ["GET"],
+    credentials: true,
+    maxAge: 3600,
+    preflightContinue: true,
+}
+app.options('/api/logout', cors(logoutUserCors))
+app.get('/api/logout', cors(logoutUserCors), function (req, res, next) {
+    res.json({msg: 'This is CORS-enables for logout'})
+})
+
+const activeUserCors = {
+    origin: true,
+    methods: ["POST"],
+    credentials: true,
+    maxAge: 3600,
+    preflightContinue: true,
+}
+app.options('/api/active', cors(activeUserCors))
+app.post('/api/active', cors(activeUserCors), function (req, res, next) {
+    res.json({msg: 'This is CORS-enables for active'})
+})
+
+const registerUserCors = {
+    origin: true,
+    methods: ["POST"],
+    credentials: true,
+    maxAge: 3600,
+    preflightContinue: true,
+}
+app.options('/api/register', cors(registerUserCors))
+app.post('/api/register', cors(registerUserCors), function (req, res, next) {
+    res.json({msg: 'This is CORS-enables for register'})
+})
 
 app.use('/api', routes.authRouter)
 app.use('/api', routes.photosRouter)
