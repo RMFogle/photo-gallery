@@ -23,7 +23,8 @@ const loginOptions = {
     origin: true,
     methods: ["POST"],
     credentials: true,
-    maxAge: 3600
+    maxAge: 3600,
+    preflightContinue: true,
 }
 app.options('/api/google_login', cors(loginOptions))
 app.post('/api/google_login', cors(loginOptions), function (req, res, next) {
@@ -34,7 +35,8 @@ const refreshTokenCors = {
     origin: true,
     methods: ["GET"],
     credentials: true,
-    maxAge: 3600
+    maxAge: 3600,
+    preflightContinue: true,
 }
 app.options('/api/refresh_token', cors(refreshTokenCors))
 app.get('/api/refresh_token', cors(refreshTokenCors), function (req, res, next) {
@@ -45,7 +47,8 @@ const loginUser = {
     origin: true,
     methods: ["POST"],
     credentials: true,
-    maxAge: 3600
+    maxAge: 3600,
+    preflightContinue: true,
 }
 app.options('/api/login', cors(loginUser))
 app.get('/api/login', cors(loginUser), function (req, res, next) {
