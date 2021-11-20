@@ -51,7 +51,7 @@ const loginUser = {
     preflightContinue: true,
 }
 app.options('/api/login', cors(loginUser))
-app.get('/api/login', cors(loginUser), function (req, res, next) {
+app.post('/api/login', cors(loginUser), function (req, res, next) {
     res.json({msg: 'This is CORS-enables for login'})
 })
 
