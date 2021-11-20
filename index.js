@@ -41,6 +41,18 @@ app.get('/api/refresh_token', cors(refreshTokenCors), function (req, res, next) 
     res.json({msg: 'This is CORS-enables for refresh token'})
 })
 
+const loginUser = {
+    origin: true,
+    methods: ["POST"],
+    credentials: true,
+    maxAge: 3600
+}
+app.options('/api/login', cors(loginUser))
+app.get('/api/login', cors(loginUser), function (req, res, next) {
+    res.json({msg: 'This is CORS-enables for login'})
+})
+
+
 app.use('/api', routes.authRouter)
 app.use('/api', routes.photosRouter)
 app.get('/', (req, res) => {
