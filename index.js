@@ -30,7 +30,16 @@ app.post('/api/google_login', cors(loginOptions), function (req, res, next) {
     res.json({msg: 'This is CORS-enables for google login'})
 })
 
-
+const refreshTokenCors = {
+    origin: true,
+    methods: ["GET"],
+    credentials: true,
+    maxAge: 3600
+}
+app.options('/api/refresh_token', cors(refreshTokenCors))
+app.get('/api/refresh_token', cors(refreshTokenCors), function (req, res, next) {
+    res.json({msg: 'This is CORS-enables for refresh token'})
+})
 
 app.use('/api', routes.authRouter)
 app.use('/api', routes.photosRouter)
