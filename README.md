@@ -43,7 +43,7 @@ Here is a working live demo: https://sad-mestorf-f1ac6b.netlify.app/
 Had CORS issue: "cors policy: response to preflight request doesn't pass access control check: no 'access-control-allow-origin' header is present on the requested resource." 
 
 So I added custom preflights for each route. For example: 
-![](add asset image here for react photo gallery .png)
+![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/cors_preflight_googlelogin.JPG)
 
 The above code seemd to solve the cors issue, but I don't recieve a successful login message and the app fails to redirect to home after logging in. 
 
