@@ -91,8 +91,21 @@ app.post('/api/register', cors(registerUserCors), function (req, res, next) {
     res.json({msg: 'This is CORS-enables for register'})
 })
 
+const userIDCors = {
+    origin: true,
+    methods: ["GET"],
+    credentials: true,
+    maxAge: 3600,
+    preflightContinue: true,
+}
+app.options('/api/user/:id', cors(userIDCors))
+app.get('/api/user/:id', cors(userIDCors), function (req, res, next) {
+    res.json({msg: 'This is CORS-enables for user_id'})
+})
+
 app.use('/api', routes.authRouter)
 app.use('/api', routes.photosRouter)
+app.use('/api', routes.userRouter)
 app.get('/', (req, res) => {
     res.json({
         msg: 'Welcome',
