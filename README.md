@@ -8,7 +8,7 @@ Here is a working live demo: https://sad-mestorf-f1ac6b.netlify.app/
 ## Desktop & Mobile Friendly: 
 
 ### Upload Page 
-![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/uploadImage.png)
+![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/uploadImages.png)
 
 ### Gallery Page 
 ![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/galleryPage.png)
