@@ -34,7 +34,7 @@ Here is a working live demo: https://sad-mestorf-f1ac6b.netlify.app/
 - Netlify for frontend deployment.
 
 ## Features: 
-- Custom built(no library such as React-file-base64) image uploader from desktop or mobile device. Currently works with jpg only. 
+- Custom built image uploader from desktop or mobile device. Currently works with .jpg only. 
 - Delete image from gallery. 
 
 ## Bugs: 
