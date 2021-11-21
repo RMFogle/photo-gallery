@@ -10,7 +10,10 @@ const Menu = () => {
 
     const bfLoginLinks = [
         { label: 'Login', path: '/login' },
-        { label: 'Register', path: '/register' }
+        { label: 'Register', path: '/register' },
+        { label: 'Home', path: '/' },
+        { label: 'Upload', path: '/upload' },
+        { label: 'Gallery', path: '/gallery'}
     ]
 
     const afLoginLinks = [
