@@ -1,15 +1,22 @@
 import jwt from 'jsonwebtoken'
 
+
+const {
+    ACTIVE_TOKEN_SECRET,
+    ACCESS_TOKEN_SECRET,
+    REFRESH_TOKEN_SECRET
+} = process.env
+
 export const generateActiveToken = (payload) => {
-    return jwt.sign(payload, `${process.env.ACTIVE_TOKEN_SECRET}`, {expiresIn: '5m'})
+    return jwt.sign(payload, `${ACTIVE_TOKEN_SECRET}`, {expiresIn: '5m'})
 }
 
 export const generateAccessToken = (payload) => {
-    return jwt.sign(payload, `${process.env.ACCESS_TOKEN_SECRET}`, {expiresIn: '15m'})
+    return jwt.sign(payload, `${ACCESS_TOKEN_SECRET}`, {expiresIn: '15m'})
 }
 
 export const generateRefreshToken = (payload, res) => {
-    const refresh_token = jwt.sign(payload, `${process.env.REFRESH_TOKEN_SECRET}`, {expiresIn: '30d'})
+    const refresh_token = jwt.sign(payload, `${REFRESH_TOKEN_SECRET}`, {expiresIn: '30d'})
 
     res.cookie('refreshtoken', refresh_token, {
         httpOnly: true,
