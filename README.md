@@ -1,4 +1,4 @@
-# ![](add asset image here for react photo gallery .png)
+# ![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/react_photoGallery_home.png)
 
 react photo gallery is a private/personal photo gallery app. 
 
@@ -8,10 +8,10 @@ Here is a working live demo: https://sad-mestorf-f1ac6b.netlify.app/
 ## Desktop & Mobile Friendly: 
 
 ### Upload Page 
-![](add asset image here for react photo gallery .png)
+![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/uploadImage.png)
 
 ### Gallery Page 
-![](add asset image here for react photo gallery .png)
+![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/galleryPage.png)
 
 ## Motivation 
 - I've had experience using an image uploader library such as React-file-base64 and I wanted to build a custom built image uploader using just javascript, multer and react components. 
@@ -43,7 +43,7 @@ Here is a working live demo: https://sad-mestorf-f1ac6b.netlify.app/
 Had CORS issue: "cors policy: response to preflight request doesn't pass access control check: no 'access-control-allow-origin' header is present on the requested resource." 
 
 So I added custom preflights for each route. For example: 
-![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/cors_preflight_googlelogin.JPG)
+![](https://github.com/RMFogle/photo-gallery/blob/main/client/src/img/cors_preflight_googlelogin.png)
 
 The above code seemd to solve the cors issue, but I don't recieve a successful login message and the app fails to redirect to home after logging in. 
 
